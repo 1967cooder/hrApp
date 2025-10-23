@@ -1,42 +1,72 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  background-color: aqua;
+  height: 100vh;
+  width: 100vw;
+}
+.header {
+  margin-top: 10px;
+  color: white;
+  font-size: 2em;
+  width: 100%;
+  background-color: hsl(235, 36%, 46%);
+  padding: 2rem 2rem;
+  font-family: "Red Hat Display";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap; /* ако не се побират, да минат на следващ ред */
+  height: 79vh;
+  margin-top: 0.6rem; /* ето реално разстояние под header */
+  gap: 40px; /* разстояние между картите */
+  background-color: hsl(235, 36%, 46%);
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+.box {
+  background-color: white;
+  color: black;
+  min-width: 250px; /* фиксирана ширина */
+  min-height: 250px; /* квадрат */
+  display: flex;
+  flex-direction: column; /* подрежда елементите вертикално */
+  flex-wrap: wrap;
+  justify-content: center; /* центрира вертикално box */
+  border-radius: 10px;
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.2);
+  padding: 20px 20px 20px 50px;
+  /*gap: 10px; paztojanie mejdu redovete*/
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.box > * {
+  /*vsichki deza v box*/
+  margin-bottom: 10px; /*razstojanie mejdu redovete kato gap*/
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+body {
+  font-family: "Red Hat Display", sans-serif;
 }
 
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+.footer {
+  margin-top: 10px;
+  color: white;
+  font-size: 0.9em;
+  width: 100%;
+  background-color: hsl(235, 36%, 46%);
+  padding: 2rem 2rem;
+  font-family: "Red Hat Display";
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap; /* tarvitaan mobiilissa */
+  box-sizing: border-box; /* da ne izlizat ot ekrana */
 }

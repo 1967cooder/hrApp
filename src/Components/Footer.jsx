@@ -1,5 +1,9 @@
 const Footer = (props) => {
-  return <h3 className="footer">© 2024 hrApp. All rights reserved.</h3>;
+  return (
+    <footer className="footer">
+      <h3>© 2024 hrApp. All rights reserved.</h3>
+    </footer>
+  );
 };
 
 export default Footer;

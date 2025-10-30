@@ -23,30 +23,50 @@
 }
 .container {
   display: flex;
+  flex-direction: row; /* подрежда елементите хоризонтално */
   justify-content: center;
   align-items: center;
   flex-wrap: wrap; /* ако не се побират, да минат на следващ ред */
   height: 79vh;
+  width: 100%;
   margin-top: 0.6rem; /* ето реално разстояние под header */
   gap: 40px; /* разстояние между картите */
   background-color: hsl(235, 36%, 46%);
+  color: white;
 }
 
-.box {
+.employee {
+  /* контейнер за картите */
+  display: flex;
+  flex-direction: row; /* хоризонтално подреждане */
+  flex-wrap: wrap; /* прехвърляне на следващ ред при нужда */
+  justify-content: center; /* центрира редовете */
+  align-items: flex-start; /* подравнява картите отгоре */
+  gap: 30px; /* разстояние между картите */
+  padding: 2rem;
+  background-color: hsl(235, 36%, 46%);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.person-card {
   background-color: white;
   color: black;
-  min-width: 250px; /* фиксирана ширина */
-  min-height: 250px; /* квадрат */
+  font-size: 0.5em;
+  width: calc(15% - 16px); /* 5 на ред (коригира gap) */
+  min-width: 180px; /* не става твърде малка */
+  min-height: 250px; /* фиксирана височина, за да са равни */
   display: flex;
   flex-direction: column; /* подрежда елементите вертикално */
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   justify-content: center; /* центрира вертикално box */
   border-radius: 10px;
   box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.2);
-  padding: 20px 20px 20px 50px;
+  padding: 15px;
   /*gap: 10px; paztojanie mejdu redovete*/
+  box-sizing: border-box; /* da ne izlizat ot ekrana */
 }
-.box > * {
+.person-card > * {
   /*vsichki deza v box*/
   margin-bottom: 10px; /*razstojanie mejdu redovete kato gap*/
 }
@@ -63,10 +83,13 @@ body {
   background-color: hsl(235, 36%, 46%);
   padding: 2rem 2rem;
   font-family: "Red Hat Display";
-  color: white;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap; /* tarvitaan mobiilissa */
   box-sizing: border-box; /* da ne izlizat ot ekrana */
+}
+.footer > * {
+  flex-basis: 100%;
+  flex-grow: 1;
 }

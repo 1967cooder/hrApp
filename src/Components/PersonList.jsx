@@ -4,7 +4,6 @@ const PersonList = ({ employees }) => {
   console.log(employees);
   return (
     <>
-      <p>komponentti PersonList</p>
       <section className="employee">
         {employees.map((employee) => (
           <PersonCard

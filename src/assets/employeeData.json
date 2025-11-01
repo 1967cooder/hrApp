@@ -7,7 +7,7 @@
     "phone": "555-123-4567",
     "email": "alice.johnson@example.com",
     "animal": "🐕",
-    "startDate": "2020-06-15",
+    "startDate": "2025-08-01",
     "location": "New York",
     "department": "Engineering",
     "skills": ["JavaScript", "React", "Node.js"]
@@ -20,7 +20,7 @@
     "phone": "555-234-5678",
     "email": "bob.smith@example.com",
     "animal": "🐈‍⬛",
-    "startDate": "2018-09-01",
+    "startDate": "2020-10-01",
     "location": "San Francisco",
     "department": "Product",
     "skills": ["Agile", "Scrum", "Leadership"]
@@ -32,8 +32,8 @@
     "salary": 78000,
     "phone": "555-345-6789",
     "email": "charlie.brown@example.com",
-    "animal": "Rabbit",
-    "startDate": "2019-03-12",
+    "animal": "🐇",
+    "startDate": "2018-03-12",
     "location": "Seattle",
     "department": "Design",
     "skills": ["Figma", "Sketch", "Prototyping"]
@@ -46,7 +46,7 @@
     "phone": "555-456-7890",
     "email": "diana.prince@example.com",
     "animal": "🦄",
-    "startDate": "2021-01-20",
+    "startDate": "2015-06-20",
     "location": "Chicago",
     "department": "Human Resources",
     "skills": ["Recruitment", "Onboarding", "Conflict Resolution"]
@@ -59,7 +59,7 @@
     "phone": "555-567-8901",
     "email": "ethan.hunt@example.com",
     "animal": "🦅",
-    "startDate": "2017-11-05",
+    "startDate": "2020-11-05",
     "location": "Los Angeles",
     "department": "Sales",
     "skills": ["Negotiation", "CRM", "Networking"]
@@ -72,7 +72,7 @@
     "phone": "555-678-9012",
     "email": "fiona.gallagher@example.com",
     "animal": "🦜",
-    "startDate": "2022-04-10",
+    "startDate": "2025-09-15",
     "location": "Boston",
     "department": "Marketing",
     "skills": ["SEO", "Content Creation", "Social Media"]
@@ -85,7 +85,7 @@
     "phone": "555-789-0123",
     "email": "george.miller@example.com",
     "animal": "🦉",
-    "startDate": "2019-08-25",
+    "startDate": "2010-08-25",
     "location": "Austin",
     "department": "Data Science",
     "skills": ["Python", "Machine Learning", "Data Visualization"]
@@ -98,35 +98,61 @@
     "phone": "555-890-1234",
     "email": "hannah.lee@example.com",
     "animal": "🦊",
-    "startDate": "2020-02-18",
+    "startDate": "2025-07-01",
     "location": "Denver",
     "department": "IT",
     "skills": ["AWS", "Docker", "Kubernetes"]
   },
   {
     "id": 9,
-    "name": "Ian Wright",
-    "title": "Financial Analyst",
-    "salary": 76000,
-    "phone": "555-901-2345",
-    "email": "ian.wright@example.com",
-    "animal": "🐻",
-    "startDate": "2016-07-30",
-    "location": "Atlanta",
-    "department": "Finance",
-    "skills": ["Excel", "Forecasting", "Budgeting"]
-  },
-  {
-    "id": 10,
     "name": "Julia Roberts",
     "title": "Customer Support Specialist",
     "salary": 65000,
     "phone": "555-012-3456",
     "email": "julia.roberts@example.com",
     "animal": "🐧",
-    "startDate": "2021-10-15",
+    "startDate": "2025-08-15",
     "location": "Miami",
     "department": "Customer Support",
     "skills": ["Communication", "Problem Solving", "Empathy"]
+  },
+  {
+    "id": 10,
+    "name": "Kevin Hart",
+    "title": "QA Engineer",
+    "salary": 78000,
+    "phone": "555-222-3333",
+    "email": "kevin.hart@example.com",
+    "animal": "🐻",
+    "startDate": "2015-10-01",
+    "location": "San Diego",
+    "department": "QA",
+    "skills": ["Testing", "Automation", "Selenium"]
+  },
+  {
+    "id": 11,
+    "name": "Laura Kim",
+    "title": "Business Analyst",
+    "salary": 85000,
+    "phone": "555-333-4444",
+    "email": "laura.kim@example.com",
+    "animal": "🐪",
+    "startDate": "2013-05-15",
+    "location": "Houston",
+    "department": "Business",
+    "skills": ["Analytics", "Process Mapping", "SQL"]
+  },
+  {
+    "id": 12,
+    "name": "Mark Brown",
+    "title": "Junior Analyst",
+    "salary": 45000,
+    "phone": "555-345-6781",
+    "email": "mark.brown@example.com",
+    "animal": "🐷",
+    "startDate": "2024-06-01",
+    "location": "Austin",
+    "department": "Finance",
+    "skills": ["Excel", "Reporting"]
   }
 ]

@@ -37,12 +37,13 @@
 
 .employee {
   /* контейнер за картите */
-  display: flex;
-  flex-direction: row; /* хоризонтално подреждане */
-  flex-wrap: wrap; /* прехвърляне на следващ ред при нужда */
-  justify-content: center; /* центрира редовете */
-  align-items: flex-start; /* подравнява картите отгоре */
-  gap: 30px; /* разстояние между картите */
+  display: grid;
+  grid-template-columns: repeat(6, 1fr); /* 6 колони */
+  grid-template-rows: repeat(2, auto); /* 2 реда */
+  row-gap: 20px; /* разстояние между редовете */
+  column-gap: 5px; /* по-малко разстояние между колоните */
+  justify-items: center; /* центрира картите хоризонтално в колоната */
+  align-items: start; /* подравнява картите отгоре */
   padding: 2rem;
   background-color: hsl(235, 36%, 46%);
   width: 100%;
@@ -54,8 +55,8 @@
   color: black;
   font-size: 0.5em;
   width: calc(15% - 16px); /* 5 на ред (коригира gap) */
-  min-width: 180px; /* не става твърде малка */
-  min-height: 250px; /* фиксирана височина, за да са равни */
+  width: 200px; /* фиксирана ширина */
+  height: 300px; /* фиксирана височина */
   display: flex;
   flex-direction: column; /* подрежда елементите вертикално */
   flex-wrap: nowrap;

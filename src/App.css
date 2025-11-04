@@ -5,10 +5,11 @@
 
 #root {
   background-color: aqua;
-  height: 100vh;
+  /* height: 100vh; */
+  min-height: 100vh;
   width: 100vw;
 }
-.header {
+.headerContainer {
   margin-top: 10px;
   color: white;
   font-size: 2em;
@@ -17,22 +18,40 @@
   padding: 2rem 2rem;
   font-family: "Red Hat Display";
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   box-sizing: border-box;
 }
+.nav-links {
+  display: flex;
+  gap: 50px;
+}
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 1em;
+}
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
 .container {
   display: flex;
   flex-direction: row; /* подрежда елементите хоризонтално */
   justify-content: center;
   align-items: center;
   flex-wrap: wrap; /* ако не се побират, да минат на следващ ред */
-  height: 79vh;
+  /* height: 79vh; */
+  min-height: calc(100vh - 120px); /* адаптивна минимална височина */
   width: 100%;
   margin-top: 0.6rem; /* ето реално разстояние под header */
   gap: 40px; /* разстояние между картите */
   background-color: hsl(235, 36%, 46%);
   color: white;
+  box-sizing: border-box; /* da ne izlizat ot ekrana */
+  padding-bottom: 2rem; /* малко място под последния елемент */
+  padding-top: 2rem; /* малко място над първия елемент */
+  overflow-y: auto; /* позволява скрол, ако екрана е малък */
 }
 
 .employee {
@@ -74,6 +93,30 @@
 
 body {
   font-family: "Red Hat Display", sans-serif;
+}
+
+.add-employee-form {
+  background-color: white;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 300px;
+  font-family: "Red Hat Display", sans-serif;
+  gap: 10px;
+}
+.add-employee-form label {
+  font-weight: bold;
+  color: black;
+}
+.add-employee-form input,
+.add-employee-form select {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1em;
 }
 
 .footer {

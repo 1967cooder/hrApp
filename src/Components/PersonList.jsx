@@ -8,6 +8,8 @@ const PersonList = ({ employees }) => {
         {employees.map((employee) => (
           <PersonCard
             key={employee.id}
+            {...employee}
+            /* Tämä kaikki = {...employee}
             name={employee.name}
             title={employee.title}
             salary={employee.salary}
@@ -17,7 +19,7 @@ const PersonList = ({ employees }) => {
             startDate={employee.startDate}
             location={employee.location}
             department={employee.department}
-            skills={employee.skills}
+            skills={employee.skills} */
           />
         ))}
       </section>

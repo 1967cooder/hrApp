@@ -1,14 +1,15 @@
-function AddEmployee({ addEmployeeData, setEmployeeData, handleClick }) {
+function AddEmployee({ formData, setFormData, handleClick }) {
   const handleChange = (e) => {
-    setEmployeeData((prevState) => {
+    // Функция за обработка на промени в полетата на формата
+    setFormData((prevState) => {
       return { ...prevState, [e.target.name]: e.target.value };
     });
   };
 
   const handleSubmit = (e) => {
-    e.preventDefault();
-    handleClick();
-    setEmployeeData({
+    e.preventDefault(); // Предотвратяваме презареждането на страницата
+    handleClick(); // Извикваме функцията за добавяне на служител
+    setFormData({
       name: "",
       title: "",
       salary: "",
@@ -23,13 +24,14 @@ function AddEmployee({ addEmployeeData, setEmployeeData, handleClick }) {
   };
 
   return (
-    <div>
-      <form className="add-employee-form" onSubmit={handleSubmit}>
+    <section className="container">
+      <form className="form" onSubmit={handleSubmit}>
         <label htmlFor="name">Name:</label>
         <input
           id="name"
           name="name"
-          value={addEmployeeData.name}
+          autoComplete="name"
+          value={formData.name}
           onChange={handleChange}
           required
         />
@@ -37,7 +39,7 @@ function AddEmployee({ addEmployeeData, setEmployeeData, handleClick }) {
         <input
           id="title"
           name="title"
-          value={addEmployeeData.title}
+          value={formData.title}
           onChange={handleChange}
           required
         />
@@ -45,7 +47,7 @@ function AddEmployee({ addEmployeeData, setEmployeeData, handleClick }) {
         <input
           id="salary"
           name="salary"
-          value={addEmployeeData.salary}
+          value={formData.salary}
           onChange={handleChange}
           required
         />
@@ -53,7 +55,7 @@ function AddEmployee({ addEmployeeData, setEmployeeData, handleClick }) {
         <input
           id="phone"
           name="phone"
-          value={addEmployeeData.phone}
+          value={formData.phone}
           onChange={handleChange}
           required
         />
@@ -61,7 +63,7 @@ function AddEmployee({ addEmployeeData, setEmployeeData, handleClick }) {
         <input
           id="email"
           name="email"
-          value={addEmployeeData.email}
+          value={formData.email}
           onChange={handleChange}
           required
         />
@@ -69,7 +71,7 @@ function AddEmployee({ addEmployeeData, setEmployeeData, handleClick }) {
         <input
           id="animal"
           name="animal"
-          value={addEmployeeData.animal}
+          value={formData.animal}
           onChange={handleChange}
           required
         />
@@ -78,7 +80,7 @@ function AddEmployee({ addEmployeeData, setEmployeeData, handleClick }) {
           id="startDate"
           name="startDate"
           type="date"
-          value={addEmployeeData.startDate}
+          value={formData.startDate}
           onChange={handleChange}
           required
         />
@@ -86,7 +88,7 @@ function AddEmployee({ addEmployeeData, setEmployeeData, handleClick }) {
         <input
           id="location"
           name="location"
-          value={addEmployeeData.location}
+          value={formData.location}
           onChange={handleChange}
           required
         />
@@ -94,21 +96,40 @@ function AddEmployee({ addEmployeeData, setEmployeeData, handleClick }) {
         <input
           id="department"
           name="department"
-          value={addEmployeeData.department}
+          value={formData.department}
           onChange={handleChange}
           required
         />
-        <label htmlFor="skills">Skills (comma separated):</label>
+        <label htmlFor="skills">Skills:</label>
         <input
           id="skills"
           name="skills"
-          value={addEmployeeData.skills}
+          value={formData.skills}
           onChange={handleChange}
         />
 
         <button type="submit">Add Employee</button>
+        <button
+          type="reset"
+          onClick={() => {
+            setFormData({
+              name: "",
+              title: "",
+              salary: "",
+              phone: "",
+              email: "",
+              animal: "",
+              startDate: "",
+              location: "",
+              department: "",
+              skills: "",
+            });
+          }}
+        >
+          Reset Form
+        </button>
       </form>
-    </div>
+    </section>
   );
 }
 

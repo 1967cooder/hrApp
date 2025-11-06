@@ -10,8 +10,9 @@ import AddEmployee from "./Components/AddEmployee.jsx";
 import employeeData from "./assets/employeeData.json";
 
 function App() {
-  const [employees, setEmployees] = useState(employeeData);
-  const [addEmployeeData, setEmployeeData] = useState({
+  const [employees, setEmployees] = useState(employeeData); // Списък със служители
+  const [formData, setFormData] = useState({
+    // Данни за нов служител
     name: "",
     title: "",
     salary: "",
@@ -23,31 +24,54 @@ function App() {
     department: "",
     skills: "",
   });
+  //-----------handleClick---------------------------
 
-  const handleAddEmployee = () => {
-    const newEmployee = {
-      id: Date.now(),
-      ...addEmployeeData,
-      skills: addEmployeeData.skills
-        ? addEmployeeData.skills.split(",").map((skill) => skill.trim())
-        : [],
-    };
-    // Добавяме новия служител към списъка
-    setEmployees((prev) => [...prev, newEmployee]);
-    // Нулираме формата
-    setEmployeeData({
-      name: "",
-      title: "",
-      salary: "",
-      phone: "",
-      email: "",
-      animal: "",
-      startDate: "",
-      location: "",
-      department: "",
-      skills: "",
-    });
+  const handleClick = () => {
+    setEmployees([
+      ...employees,
+      {
+        id: employees.length + 1,
+        name: formData.name,
+        title: formData.title,
+        salary: formData.salary,
+        phone: formData.phone,
+        email: formData.email,
+        animal: formData.animal,
+        startDate: formData.startDate,
+        location: formData.location,
+        department: formData.department,
+        skills: formData.skills,
+        skills: formData.skills.split(",").map((skill) => skill.trim()),
+      },
+    ]);
   };
+
+  // const handleAddEmployee = () => {
+  //   // Добавяме нов служител към списъка
+  //   const newEmployee = {
+  //     // Създаваме нов обект служител
+  //     id: Date.now(),
+  //     ...formData,
+  //     skills: formData.skills
+  //       ? formData.skills.split(",").map((skill) => skill.trim())
+  //       : [],
+  //   };
+  //   // Добавяме новия служител към списъка
+  //   setEmployees((prev) => [...prev, newEmployee]);
+  // Нулираме формата
+  //   setFormData({
+  //     name: "",
+  //     title: "",
+  //     salary: "",
+  //     phone: "",
+  //     email: "",
+  //     animal: "",
+  //     startDate: "",
+  //     location: "",
+  //     department: "",
+  //     skills: "",
+  //   });
+  // };
   return (
     <>
       <BrowserRouter>
@@ -61,9 +85,9 @@ function App() {
               path="/add-employee"
               element={
                 <AddEmployee
-                  addEmployeeData={addEmployeeData}
-                  setEmployeeData={setEmployeeData}
-                  handleClick={handleAddEmployee}
+                  formData={formData}
+                  setFormData={setFormData}
+                  handleClick={handleClick}
                 />
               }
             />

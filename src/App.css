@@ -95,7 +95,7 @@ body {
   font-family: "Red Hat Display", sans-serif;
 }
 
-.add-employee-form {
+.form {
   background-color: white;
   padding: 1rem;
   border-radius: 10px;
@@ -107,12 +107,12 @@ body {
   font-family: "Red Hat Display", sans-serif;
   gap: 10px;
 }
-.add-employee-form label {
+.form label {
   font-weight: bold;
   color: black;
 }
-.add-employee-form input,
-.add-employee-form select {
+.form input,
+.form select {
   padding: 0.5rem;
   border: 1px solid #ccc;
   border-radius: 5px;

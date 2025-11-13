@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 
@@ -7,10 +8,11 @@ import Header from "./Components/Header.jsx";
 import About from "./Components/About.jsx";
 import Footer from "./Components/Footer.jsx";
 import AddEmployee from "./Components/AddEmployee.jsx";
-import employeeData from "./assets/employeeData.json";
+// import employeeData from "./assets/employeeData.json";
+import employeeData from "./db.json";
 
 function App() {
-  const [employees, setEmployees] = useState(employeeData); // Списък със служители
+  const [employees, setEmployees] = useState([]); // Списък със служители
   const [formData, setFormData] = useState({
     // Данни за нов служител
     name: "",
@@ -24,6 +26,16 @@ function App() {
     department: "",
     skills: "",
   });
+  useEffect(() => {
+    // Извличаме данните от локалния JSON файл при зареждане на компонента
+    // setEmployees(employeeData.employees);
+    console.log("effect");
+    axios.get("http://localhost:3001/employees").then((response) => {
+      console.log("promise fulfilled");
+      setEmployees(response.data);
+    });
+  }, []);
+  console.log("render", employees.length, "employees");
   //-----------handleClick---------------------------
 
   const handleClick = () => {
@@ -87,6 +99,8 @@ function App() {
                 <AddEmployee
                   formData={formData}
                   setFormData={setFormData}
+                  setEmployees={setEmployees}
+                  employee={employees}
                   handleClick={handleClick}
                 />
               }

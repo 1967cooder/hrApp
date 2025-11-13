@@ -1,3 +1,5 @@
+import axios from "axios";
+
 function AddEmployee({ formData, setFormData, handleClick }) {
   const handleChange = (e) => {
     // Функция за обработка на промени в полетата на формата
@@ -8,6 +10,13 @@ function AddEmployee({ formData, setFormData, handleClick }) {
 
   const handleSubmit = (e) => {
     e.preventDefault(); // Предотвратяваме презареждането на страницата
+
+    axios //päivitä tähän axios
+      .post("http://localhost:3001/employees", formData)
+      .then((response) => {
+        setEmployees(employees.concat(response.data));
+      });
+
     handleClick(); // Извикваме функцията за добавяне на служител
     setFormData({
       name: "",

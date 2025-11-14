@@ -204,17 +204,21 @@
       ]
     },
     {
-      "id": "b1fb",
+      "id": "c292",
       "name": "Silvana",
-      "title": "jhjhjhj",
+      "title": ",m,m,m",
       "salary": "6656",
       "phone": "76768779",
       "email": "silvanalindholm@hotmail.com",
       "animal": "fox",
       "startDate": "2025-11-21",
       "location": "helsinki",
-      "department": "j",
-      "skills": "kjk"
+      "department": "jhjhjh",
+      "skills": [
+        "kklkl",
+        "jkjkj",
+        "klklk"
+      ]
     }
   ]
 }

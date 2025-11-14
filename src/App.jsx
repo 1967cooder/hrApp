@@ -52,7 +52,6 @@ function App() {
         startDate: formData.startDate,
         location: formData.location,
         department: formData.department,
-        skills: formData.skills,
         skills: formData.skills.split(",").map((skill) => skill.trim()),
       },
     ]);
@@ -100,7 +99,7 @@ function App() {
                   formData={formData}
                   setFormData={setFormData}
                   setEmployees={setEmployees}
-                  employee={employees}
+                  employees={employees}
                   handleClick={handleClick}
                 />
               }

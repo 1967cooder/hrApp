@@ -1,0 +1,27 @@
+.headerContainer {
+  margin-top: 10px;
+  color: white;
+  font-size: 2em;
+  width: 100%;
+  background-color: hsl(235, 36%, 46%);
+  padding: 2rem 2rem;
+  font-family: "Red Hat Display";
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+}
+.navLinks {
+  display: flex;
+  gap: 50px;
+}
+
+.navLinks a {
+  color: white;
+  text-decoration: none;
+  font-size: 1em;
+}
+
+.navLinks a:hover {
+  text-decoration: underline;
+}

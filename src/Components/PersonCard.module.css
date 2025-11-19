@@ -1,0 +1,21 @@
+.person-card {
+  background-color: white;
+  color: black;
+  font-size: 0.5em;
+  width: calc(15% - 16px); /* 5 на ред (коригира gap) */
+  width: 200px; /* фиксирана ширина */
+  height: 300px; /* фиксирана височина */
+  display: flex;
+  flex-direction: column; /* подрежда елементите вертикално */
+  flex-wrap: nowrap;
+  justify-content: center; /* центрира вертикално box */
+  border-radius: 10px;
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.2);
+  padding: 15px;
+  /*gap: 10px; paztojanie mejdu redovete*/
+  box-sizing: border-box; /* da ne izlizat ot ekrana */
+}
+.person-card > * {
+  /*vsichki deza v box*/
+  margin-bottom: 10px; /*razstojanie mejdu redovete kato gap*/
+}

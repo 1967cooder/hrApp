@@ -1,3 +1,5 @@
+import styles from "./PersonCard.module.css";
+
 //-----------calculateServiceYears---------------------------
 const calculateServiceYears = (startDate) => {
   const start = new Date(startDate); // Превръщаме началната дата (текст) в обект от тип Date
@@ -38,7 +40,7 @@ const PersonCard = (props) => {
   );
 
   return (
-    <div className="person-card">
+    <div className={styles["person-card"]}>
       <h2>{props.name}</h2>
       <p>Title: {props.title}</p>
       <p>Salary: {props.salary}</p>

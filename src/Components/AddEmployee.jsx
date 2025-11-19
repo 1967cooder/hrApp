@@ -1,4 +1,5 @@
 import axios from "axios";
+import styles from "./AddEmployee.module.css";
 
 function AddEmployee({ formData, setFormData, employees, setEmployees }) {
   const handleChange = (e) => {
@@ -41,8 +42,8 @@ function AddEmployee({ formData, setFormData, employees, setEmployees }) {
   };
 
   return (
-    <section className="container">
-      <form className="form" onSubmit={handleSubmit}>
+    <section className={styles.addEmployeeContainer}>
+      <form className={styles.form} onSubmit={handleSubmit}>
         <label htmlFor="name">Name:</label>
         <input
           id="name"

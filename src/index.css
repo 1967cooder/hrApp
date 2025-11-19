@@ -1,0 +1,67 @@
+/* GLOBAL RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Root background */
+#root {
+  background-color: aqua;
+  min-height: 100vh;
+  width: 100vw;
+}
+
+/* Global font */
+body {
+  font-family: "Red Hat Display", sans-serif;
+}
+
+.container {
+  display: flex;
+  flex-direction: row; /* подрежда елементите хоризонтално */
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap; /* ако не се побират, да минат на следващ ред */
+  /* height: 79vh; */
+  min-height: calc(100vh - 120px); /* адаптивна минимална височина */
+  width: 100%;
+  margin-top: 0.6rem; /* ето реално разстояние под header */
+  gap: 40px; /* разстояние между картите */
+  background-color: hsl(235, 36%, 46%);
+  color: white;
+  box-sizing: border-box; /* da ne izlizat ot ekrana */
+  padding-bottom: 2rem; /* малко място под последния елемент */
+  padding-top: 2rem; /* малко място над първия елемент */
+  overflow-y: auto; /* позволява скрол, ако екрана е малък */
+}
+/*
+body {
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  color: var(--highlight-color);
+  padding: 1rem;
+}
+
+a {
+  font-weight: 500;
+  color: var(--primary-color);
+  text-decoration: inherit;
+}
+
+a:hover {
+  color: var(--secondary-color);
+}
+
+main {
+  min-height: calc(100vh - 225px);
+  max-width: 1200px;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+}
+*/

@@ -1,10 +1,11 @@
 import PersonCard from "./PersonCard";
+import styles from "./PersonList.module.css";
 
 const PersonList = ({ employees }) => {
   console.log(employees);
   return (
     <>
-      <section className="employee">
+      <section className={styles.employee}>
         {employees.map((employee) => (
           <PersonCard
             key={employee.id}

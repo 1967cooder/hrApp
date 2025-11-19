@@ -1,0 +1,18 @@
+.footer {
+  margin-top: 10px;
+  color: white;
+  font-size: 0.9em;
+  width: 100%;
+  background-color: hsl(235, 36%, 46%);
+  padding: 2rem 2rem;
+  font-family: "Red Hat Display";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap; /* tarvitaan mobiilissa */
+  box-sizing: border-box; /* da ne izlizat ot ekrana */
+}
+.footer > * {
+  flex-basis: 100%;
+  flex-grow: 1;
+}

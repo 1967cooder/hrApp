@@ -29,3 +29,35 @@
   border-radius: 5px;
   font-size: 1em;
 }
+/* Бутон стилове */
+button {
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Primary button (Add Employee) */
+button[type="submit"] {
+  background-color: #4caf50;
+  color: white;
+}
+
+button[type="submit"]:hover {
+  background-color: #45a049;
+  transform: scale(1.03);
+}
+
+/* Secondary button (Reset Form) */
+button[type="reset"] {
+  background-color: #f44336;
+  color: white;
+}
+
+button[type="reset"]:hover {
+  background-color: #e53935;
+  transform: scale(1.03);
+}

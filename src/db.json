@@ -4,35 +4,28 @@
       "id": "1",
       "name": "Alice Johnson",
       "title": "Software Engineer",
-      "salary": 85000,
+      "salary": "10000",
       "phone": "555-123-4567",
       "email": "alice.johnson@example.com",
       "animal": "🐕",
       "startDate": "2025-08-01",
       "location": "New York",
       "department": "Engineering",
-      "skills": [
-        "JavaScript",
-        "React",
-        "Node.js"
-      ]
+      "skills": "JavaScript, React, Node.js",
+      "Salary": "950008"
     },
     {
       "id": "2",
       "name": "Bob Smith",
       "title": "Product Manager",
-      "salary": 95000,
+      "salary": "10000",
       "phone": "555-234-5678",
       "email": "bob.smith@example.com",
       "animal": "🐈‍⬛",
       "startDate": "2020-10-01",
       "location": "San Francisco",
       "department": "Product",
-      "skills": [
-        "Agile",
-        "Scrum",
-        "Leadership"
-      ]
+      "skills": "Agile, Scrum, Leadership"
     },
     {
       "id": "3",
@@ -45,11 +38,7 @@
       "startDate": "2018-03-12",
       "location": "Seattle",
       "department": "Design",
-      "skills": [
-        "Figma",
-        "Sketch",
-        "Prototyping"
-      ]
+      "skills": "Figma, Sketch, Prototyping"
     },
     {
       "id": "4",
@@ -130,11 +119,7 @@
       "startDate": "2025-07-01",
       "location": "Denver",
       "department": "IT",
-      "skills": [
-        "AWS",
-        "Docker",
-        "Kubernetes"
-      ]
+      "skills": "AWS, Docker, Kubernetes"
     },
     {
       "id": "9",

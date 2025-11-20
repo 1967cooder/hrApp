@@ -4,18 +4,46 @@
   font-size: 0.5em;
   width: calc(15% - 16px); /* 5 на ред (коригира gap) */
   width: 200px; /* фиксирана ширина */
-  height: 300px; /* фиксирана височина */
+  height: 350px; /* фиксирана височина */
   display: flex;
   flex-direction: column; /* подрежда елементите вертикално */
   flex-wrap: nowrap;
-  justify-content: center; /* центрира вертикално box */
+  justify-content: flex-start; /* центрира вертикално box */
   border-radius: 10px;
   box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.2);
   padding: 15px;
+  padding-top: 30px;
   /*gap: 10px; paztojanie mejdu redovete*/
   box-sizing: border-box; /* da ne izlizat ot ekrana */
+  /* overflow-y: auto; ⚡ ключовото! вътрешен скрол вместо разтягане;
+  moje da se polzva ako se mahne ot perso-card button  "margintop:auto"*/
 }
+
 .person-card > * {
   /*vsichki deza v box*/
-  margin-bottom: 10px; /*razstojanie mejdu redovete kato gap*/
+  margin-bottom: 8px; /*razstojanie mejdu redovete kato gap*/
+}
+
+.person-card button {
+  background-color: hsl(235, 36%, 46%);
+  color: white;
+  border: none;
+  padding: 4px 12px; /* Comfortable size */
+  border-radius: 6px;
+  font-size: 12px;
+  cursor: pointer; /* Pointer on hover */
+  margin-top: auto; /* Бутоните винаги падат долу */
+  display: flex;
+  gap: 8px;
+  transition: background 0.25s ease, transform 0.15s ease;
+}
+
+.person-card button:hover {
+  background-color: hsl(235, 36%, 46%);
+  transform: translateY(-2px); /* Small lift effect */
+}
+
+.person-card button:active {
+  background-color: #2d6aa1; /* Even darker when pressed */
+  transform: translateY(0); /* Remove lift */
 }

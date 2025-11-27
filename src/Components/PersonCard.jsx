@@ -2,6 +2,8 @@ import styles from "./PersonCard.module.css";
 import axios from "axios";
 import { useState } from "react";
 
+import { _patch } from "../hooks/useAxios";
+
 //-----------calculateServiceYears---------------------------
 const calculateServiceYears = (startDate) => {
   const start = new Date(startDate); // Превръщаме началната дата (текст) в обект от тип Date
@@ -68,7 +70,7 @@ const PersonCard = (props) => {
     url = "http://localhost:3001",
     body = {},
     headers = {} //A utility function used to send PATCH requests.
-  ) => axios.patch(url, body, { headers });
+  ) => _patch(url, body, { headers });
 
   const handleInputChange = (e) => {
     //Updates individual fields inside the person state.

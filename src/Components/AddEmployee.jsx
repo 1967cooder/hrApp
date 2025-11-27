@@ -1,6 +1,8 @@
 import axios from "axios";
 import styles from "./AddEmployee.module.css";
 
+import { _post } from "../hooks/useAxios";
+
 function AddEmployee({ formData, setFormData, employees, setEmployees }) {
   const handleChange = (e) => {
     // Функция за обработка на промени в полетата на формата
@@ -12,6 +14,14 @@ function AddEmployee({ formData, setFormData, employees, setEmployees }) {
   const handleSubmit = (e) => {
     e.preventDefault(); // Предотвратяваме презареждането на страницата
 
+    try {
+      _post("/employees", formData).then((response) => {
+        setEmployees(employees.concat(response.data));
+      });
+    } catch (error) {
+      console.log("Error adding data: ", error);
+    }
+
     // Convert skills string into array
     const newEmployee = {
       ...formData,
@@ -20,12 +30,13 @@ function AddEmployee({ formData, setFormData, employees, setEmployees }) {
         : [],
     };
 
-    axios
-      .post("http://localhost:3001/employees", newEmployee)
-      .then((response) => {
-        // Update local state
-        setEmployees([...employees, response.data]);
-      });
+    // axios
+    //   .post("http://localhost:3001/employees", newEmployee)
+    //   .then((response) => {
+    //     // Update local state
+    //     setEmployees([...employees, response.data]);
+    //   });
+
     setFormData({
       // Нулираме формата след изпращане,Reset form after submission
       name: "",

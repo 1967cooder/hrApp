@@ -10,6 +10,8 @@ import AddEmployee from "./Components/AddEmployee.jsx";
 // import employeeData from "./assets/employeeData.json";
 import employeeData from "./db.json";
 
+import { _get } from "./hooks/useAxios";
+
 function App() {
   const [employees, setEmployees] = useState([]); // Списък със служители
   const [formData, setFormData] = useState({
@@ -26,14 +28,27 @@ function App() {
     skills: "",
   });
   useEffect(() => {
-    // Извличаме данните от локалния JSON файл при зареждане на компонента
-    // setEmployees(employeeData.employees);
-    console.log("effect");
-    axios.get("http://localhost:3001/employees").then((response) => {
-      console.log("promise fulfilled");
-      setEmployees(response.data);
-    });
+    fetchData();
   }, []);
+
+  const fetchData = async () => {
+    try {
+      const response = await _get("/employees", { headers: {} });
+      setEmployees(response.data);
+    } catch (error) {
+      console.log("Error fetching data: ", error);
+    }
+  };
+  // Извличаме данните от локалния JSON файл при зареждане на компонента
+  // setEmployees(employeeData.employees);
+  console.log("effect");
+  //kuin tehdään fetchData = async(ylhellä), otetaan pois tämä allapuolella
+  //   axios.get("http://localhost:3001/employees")
+  //        .then((response) => {
+  //     console.log("promise fulfilled");
+  //     setEmployees(response.data);
+  //   });
+  // }, []);
   console.log("render", employees.length, "employees");
   //-----------handleClick---------------------------
 

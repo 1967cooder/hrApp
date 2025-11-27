@@ -15,9 +15,11 @@ function AddEmployee({ formData, setFormData, employees, setEmployees }) {
     e.preventDefault(); // Предотвратяваме презареждането на страницата
 
     try {
-      _post("/employees", formData).then((response) => {
-        setEmployees(employees.concat(response.data));
-      });
+      _post("https://hrapp-mock-api.onrender.com/api/employees", formData).then(
+        (response) => {
+          setEmployees(employees.concat(response.data));
+        }
+      );
     } catch (error) {
       console.log("Error adding data: ", error);
     }
@@ -31,7 +33,7 @@ function AddEmployee({ formData, setFormData, employees, setEmployees }) {
     };
 
     // axios
-    //   .post("http://localhost:3001/employees", newEmployee)
+    //   .post("https://hrapp-mock-api.onrender.com/employees", newEmployee)
     //   .then((response) => {
     //     // Update local state
     //     setEmployees([...employees, response.data]);

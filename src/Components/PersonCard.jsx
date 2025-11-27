@@ -67,7 +67,7 @@ const PersonCard = (props) => {
   const [savedMessage, setSavedMessage] = useState(""); // за визуално потвърждение
   //----------------------------
   const update = (
-    url = "http://localhost:3001",
+    url = "https://hrapp-mock-api.onrender.com/api/employees",
     body = {},
     headers = {} //A utility function used to send PATCH requests.
   ) => _patch(url, body, { headers });
@@ -79,7 +79,7 @@ const PersonCard = (props) => {
   };
   //kenen henkilön
   const handleEdit = () => {
-    update(`http://localhost:3001/employees/${id}`, person) //Sends updated employee data to JSON server.
+    update(`https://hrapp-mock-api.onrender.com/employees/${id}`, person) //Sends updated employee data to JSON server.
       //---------------------
       .then(() => {
         setSavedMessage("✅ Changes saved!");

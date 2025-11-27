@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASE_URL = "http://localhost:3001";
+const BASE_URL = "https://hrapp-mock-api.onrender.com/api";
 
 const useAxios = axios.create({
   baseURL: BASE_URL,

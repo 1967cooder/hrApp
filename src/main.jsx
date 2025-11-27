@@ -5,12 +5,12 @@ import App from "./App.jsx";
 
 // import axios from "axios";
 
-// axios.get("http://localhost:3001/employees").then((response) => {
+// axios.get("https://hrapp-mock-api.onrender.com/employees").then((response) => {
 //   const employees = response.data;
 //   console.log(employees);
 // });
 
-// const promise2 = axios.get("http://localhost:3001/foobar");
+// const promise2 = axios.get("https://hrapp-mock-api.onrender.com/foobar");
 // console.log(promise2);
 
 createRoot(document.getElementById("root")).render(

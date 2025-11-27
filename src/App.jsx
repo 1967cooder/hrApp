@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { HashRouter as Router, Route, Routes } from "react-router-dom";
 import "./index.css";
 import PersonList from "./Components/PersonList.jsx";
 import Header from "./Components/Header.jsx";
@@ -33,7 +33,10 @@ function App() {
 
   const fetchData = async () => {
     try {
-      const response = await _get("/employees", { headers: {} });
+      const response = await _get(
+        "https://hrapp-mock-api.onrender.com/api/employees",
+        { headers: {} }
+      );
       setEmployees(response.data);
     } catch (error) {
       console.log("Error fetching data: ", error);
@@ -43,7 +46,7 @@ function App() {
   // setEmployees(employeeData.employees);
   console.log("effect");
   //kuin tehdään fetchData = async(ylhellä), otetaan pois tämä allapuolella
-  //   axios.get("http://localhost:3001/employees")
+  //   axios.get("https://hrapp-mock-api.onrender.com/employees")
   //        .then((response) => {
   //     console.log("promise fulfilled");
   //     setEmployees(response.data);
@@ -99,7 +102,7 @@ function App() {
   // };
   return (
     <>
-      <BrowserRouter>
+      <Router>
         <Header />
         <div className="container">
           <Routes>
@@ -121,7 +124,7 @@ function App() {
           </Routes>
         </div>
         <Footer />
-      </BrowserRouter>
+      </Router>
     </>
   );
 }

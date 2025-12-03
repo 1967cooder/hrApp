@@ -1,7 +1,7 @@
 import PersonCard from "./PersonCard";
 import styles from "./PersonList.module.css";
 
-const PersonList = ({ employees }) => {
+const PersonList = ({ employees, setEmployees }) => {
   console.log(employees);
   return (
     <>
@@ -10,6 +10,8 @@ const PersonList = ({ employees }) => {
           <PersonCard
             key={employee.id}
             {...employee}
+            employees={employees}
+            setEmployees={setEmployees}
             /* Tämä kaikki = {...employee}
             name={employee.name}
             title={employee.title}

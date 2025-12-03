@@ -106,7 +106,12 @@ function App() {
         <Header />
         <div className="container">
           <Routes>
-            <Route path="/" element={<PersonList employees={employees} />} />
+            <Route
+              path="/"
+              element={
+                <PersonList employees={employees} setEmployees={setEmployees} />
+              }
+            />
             {/* Home route */}
             <Route path="/about" element={<About />} />
             <Route

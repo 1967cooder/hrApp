@@ -113,17 +113,20 @@ const PersonCard = (props) => {
         .then(() => {
           setSavedMessage("🗑 Employee deleted!");
           setTimeout(() => setSavedMessage(""), 2000);
-          // След изтриване можем да обновим родителското състояние, ако е предадено:
+
+          // премахваме картата от списъка в UI
           if (props.setEmployees && props.employees) {
             props.setEmployees(props.employees.filter((e) => e.id !== id));
           }
         })
-        .catch(() => {
+        .catch((error) => {
+          console.log("DELETE error:", error);
           setSavedMessage("❌ Error deleting employee");
           setTimeout(() => setSavedMessage(""), 2000);
         });
     }
   };
+
   //-------------------------------------------
   const renderEditableField = (value, name) => {
     //Function for displaying or editing a field

@@ -34,7 +34,7 @@ function App() {
   const fetchData = async () => {
     try {
       const response = await _get(
-        "https://hrapp-mock-api.onrender.com/api/employees",
+        "https://hrapp-mock-api.onrender.com/api/employees", // http://localhost:3000/api/employees
         { headers: {} }
       );
       setEmployees(response.data);

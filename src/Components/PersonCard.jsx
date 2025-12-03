@@ -79,7 +79,7 @@ const PersonCard = (props) => {
   };
   //kenen henkilön
   const handleEdit = () => {
-    update(`https://hrapp-mock-api.onrender.com/employees/${id}`, person) //Sends updated employee data to JSON server.
+    update(`https://hrapp-mock-api.onrender.com/api/employees/${id}`, person) //Sends updated employee data to JSON server.
       //---------------------
       .then(() => {
         setSavedMessage("✅ Changes saved!");

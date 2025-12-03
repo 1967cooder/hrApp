@@ -106,6 +106,24 @@ const PersonCard = (props) => {
     //------------------------
   };
 
+  const handleDelete = () => {
+    if (window.confirm("Are you sure you want to delete this employee?")) {
+      axios
+        .delete(`https://hrapp-mock-api.onrender.com/api/employees/${id}`)
+        .then(() => {
+          setSavedMessage("🗑 Employee deleted!");
+          setTimeout(() => setSavedMessage(""), 2000);
+          // След изтриване можем да обновим родителското състояние, ако е предадено:
+          if (props.setEmployees && props.employees) {
+            props.setEmployees(props.employees.filter((e) => e.id !== id));
+          }
+        })
+        .catch(() => {
+          setSavedMessage("❌ Error deleting employee");
+          setTimeout(() => setSavedMessage(""), 2000);
+        });
+    }
+  };
   //-------------------------------------------
   const renderEditableField = (value, name) => {
     //Function for displaying or editing a field
@@ -151,25 +169,35 @@ const PersonCard = (props) => {
       {/* Edit / Save Button; If you were editing → clicking "Save" sends PATCH request.
       If you were not editing → clicking "Edit" switches to input mode.*/}
 
-      {/* Cancel бутон се показва само в режим на редакция */}
-      {isEditing && (
-        <button onClick={handleCancel} style={{ marginRight: "10px" }}>
-          Cancel
-        </button>
-      )}
+      <div className={styles["person-card-buttons"]}>
+        {/* Cancel бутон се показва само в режим на редакция */}
+        {isEditing && (
+          <button onClick={handleCancel} style={{ marginRight: "10px" }}>
+            Cancel
+          </button>
+        )}
 
-      <button
-        onClick={() => {
-          if (isEditing) handleEdit();
-          setIsEditing((prev) => !prev);
-        }}
-      >
-        {isEditing ? "Save" : "Edit"}
-      </button>
-      {/* Визуално потвърждение */}
-      {savedMessage && (
-        <p style={{ color: "green", marginTop: "5px" }}>{savedMessage}</p>
-      )}
+        <button
+          onClick={() => {
+            if (isEditing) handleEdit();
+            setIsEditing((prev) => !prev);
+          }}
+        >
+          {isEditing ? "Save" : "Edit"}
+        </button>
+
+        {/* Delete Button */}
+        <button
+          onClick={handleDelete}
+          style={{ marginLeft: "10px", backgroundColor: "red", color: "white" }}
+        >
+          Delete
+        </button>
+        {/* Визуално потвърждение */}
+        {savedMessage && (
+          <p style={{ color: "green", marginTop: "5px" }}>{savedMessage}</p>
+        )}
+      </div>
     </div>
   );
 };

@@ -47,3 +47,17 @@
   background-color: #2d6aa1; /* Even darker when pressed */
   transform: translateY(0); /* Remove lift */
 }
+.person-card-buttons {
+  display: flex;
+  gap: 4px; /* разстояние между бутоните */
+  margin-top: auto; /* винаги долу */
+  flex-wrap: wrap;
+  justify-content: center;
+}
+person-card-buttons button {
+  margin-top: 0; /* премахваме margin-top:auto */
+  flex: 1 1 auto; /* бутоните да се скалират леко при нужда */
+  min-width: 60px; /* минимум ширина за всеки бутон */
+  font-size: 12px;
+  padding: 4px 8px;
+}

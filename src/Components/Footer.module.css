@@ -1,11 +1,10 @@
 .footer {
   margin-top: 10px;
   color: white;
-  font-size: 0.9em;
+  font-size: 0.9rem;
   width: 100%;
   background-color: hsl(235, 36%, 46%);
   padding: 2rem 2rem;
-  font-family: "Red Hat Display";
   display: flex;
   justify-content: center;
   align-items: center;

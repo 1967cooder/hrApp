@@ -7,6 +7,7 @@ import Header from "./Components/Header.jsx";
 import About from "./Components/About.jsx";
 import Footer from "./Components/Footer.jsx";
 import AddEmployee from "./Components/AddEmployee.jsx";
+// import EmployeesTable from "./Components/EmployeesTable";
 // import employeeData from "./assets/employeeData.json";
 import employeeData from "./db.json";
 
@@ -126,6 +127,7 @@ function App() {
                 />
               }
             />
+            {/* <Route path="/employees-table" element={<EmployeesTable />} /> */}
           </Routes>
         </div>
         <Footer />

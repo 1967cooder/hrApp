@@ -1,8 +1,14 @@
-import styles from "./PersonCard.module.css";
+// import styles from "./PersonCard.module.css";
 import axios from "axios";
 import { useState } from "react";
-
 import { _patch } from "../hooks/useAxios";
+
+import CardMUI from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
+import { Typography } from "@mui/material";
+import TextField from "@mui/material/TextField";
+import CardActions from "@mui/material/CardActions";
+import Button from "@mui/material/Button";
 
 //-----------calculateServiceYears---------------------------
 const calculateServiceYears = (startDate) => {
@@ -44,13 +50,27 @@ const PersonCard = (props) => {
   );
 
   // Kenttien arvojen muokkaaminen
-  const name = props.name;
-  const salary = props.salary;
-  const location = props.location;
-  const department = props.department;
-  const skills = props.skills;
-  const id = props.id;
+  // const name = props.name;
+  // const salary = props.salary;
+  // const location = props.location;
+  // const department = props.department;
+  // const skills = props.skills;
+  // const id = props.id;
 
+  const {
+    id,
+    name,
+    title,
+    phone,
+    email,
+    animal,
+    startDate,
+    salary,
+    location,
+    department,
+    skills,
+  } = props;
+  //----------------------
   const [isEditing, setIsEditing] = useState(false); //ollaanko muokaamassa. Controls whether the fields are in editable mode or view mode.
   const [person, setPerson] = useState({
     //person stores the editable version of employee fields.If editing is enabled, inputs modify this state.
@@ -93,17 +113,27 @@ const PersonCard = (props) => {
       });
   };
   //----------------
+  // const handleCancel = () => {
+  //   setPerson({
+  //     salary: props.salary,
+  //     location: props.location,
+  //     department: props.department,
+  //     skills: Array.isArray(props.skills)
+  //       ? props.skills.join(", ")
+  //       : props.skills,
+  //   });
+  //   setIsEditing(false);
+  //   //------------------------
+  // };
+
   const handleCancel = () => {
     setPerson({
-      salary: props.salary,
-      location: props.location,
-      department: props.department,
-      skills: Array.isArray(props.skills)
-        ? props.skills.join(", ")
-        : props.skills,
+      salary,
+      location,
+      department,
+      skills,
     });
     setIsEditing(false);
-    //------------------------
   };
 
   const handleDelete = () => {
@@ -140,68 +170,158 @@ const PersonCard = (props) => {
     const displayName = name ? capitalizeWords(name) : "N/A";
 
     return isEditing ? (
-      <input value={value || ""} name={name} onChange={handleInputChange} /> //If editing → show <input>;If not editing → show read-only text:
+      //   <input value={value || ""} name={name} onChange={handleInputChange} /> //If editing → show <input>;If not editing → show read-only text:
+      // ) : (
+      //   <p>
+      //     {displayName}: {displayValue}
+      //   </p>
+      // );
+
+      <TextField
+        label={displayName}
+        name={name}
+        value={value || ""}
+        onChange={handleInputChange}
+        fullWidth
+        margin="dense"
+      />
     ) : (
-      <p>
+      <Typography variant="body1" sx={{ mr: 1 }}>
         {displayName}: {displayValue}
-      </p>
+      </Typography>
     );
   };
 
   return (
-    <div className={styles["person-card"]}>
-      {/*<h2>{props.name}</h2>*/}
-      <p>Name: {props.name}</p>
-      <p>Title: {props.title}</p>
+    // <div className={styles["person-card"]}>
+    //   {/*<h2>{props.name}</h2>*/}
+    //   <p>Name: {props.name}</p>
+    //   <p>Title: {props.title}</p>
+    //   <p>Phone: {props.phone}</p>
+    //   <p>Email: {props.email}</p>
+    //   <p>Animal: {props.animal}</p>
+    //   <p>StartDate: {props.startDate}</p>
+    //   <p>
+    //     Service Years: {serviceYears} {reminderMessage}
+    //   </p>
+    //   {renderEditableField(person.salary, "salary")}
+    //   {renderEditableField(person.location, "location")}
+    //   {renderEditableField(person.department, "department")}
+    //   {renderEditableField(person.skills, "skills")}
 
-      <p>Phone: {props.phone}</p>
-      <p>Email: {props.email}</p>
-      <p>Animal: {props.animal}</p>
-      <p>StartDate: {props.startDate}</p>
-      <p>
-        Service Years: {serviceYears} {reminderMessage}
-      </p>
-      {renderEditableField(person.salary, "salary")}
-      {renderEditableField(person.location, "location")}
-      {renderEditableField(person.department, "department")}
-      {renderEditableField(person.skills, "skills")}
-      {/* <p>Salary: {props.salary}</p>
-      <p>Location: {props.location}</p>
-      <p>Department: {props.department}</p>
-      <p>Skills: {props.skills.join(", ")}</p> */}
-      {/* Edit / Save Button; If you were editing → clicking "Save" sends PATCH request.
-      If you were not editing → clicking "Edit" switches to input mode.*/}
+    <CardMUI
+      sx={{
+        backgroundColor: "white",
+        color: "black",
+        fontSize: "0.5em",
+        width: 250, // фиксирана ширина
+        height: 350, // фиксирана височина
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "flex-start", // съдържанието започва отгоре
+        borderRadius: 2, // MUI използва числа вместо px (2 ~ 16px)
+        boxShadow: 3, // MUI shadow preset, може да се нагласи
+        padding: 2, // MUI spacing, 2 = 16px
+        paddingTop: 1.5, // padding-top ~ 32px
+        boxSizing: "border-box",
+      }}
+    >
+      <CardContent sx={{ flex: 1, overflowY: "auto" }}>
+        <Typography variant="h6">Name: {name}</Typography>
+        <Typography variant="body1">Title: {title}</Typography>
+        <Typography variant="body1">Phone: {phone}</Typography>
+        <Typography variant="body1">Email: {email}</Typography>
+        <Typography variant="body1">Animal: {animal}</Typography>
+        <Typography variant="body1">StartDate: {startDate}</Typography>
+        <Typography variant="body1">
+          Service Years: {serviceYears} {reminderMessage}
+        </Typography>
+        {renderEditableField(person.salary, "salary")}
+        {renderEditableField(person.location, "location")}
+        {renderEditableField(person.department, "department")}
+        {renderEditableField(person.skills, "skills")}
+      </CardContent>
 
-      <div className={styles["person-card-buttons"]}>
-        {/* Cancel бутон се показва само в режим на редакция */}
+      {/* <div className={styles["person-card-buttons"]}> */}
+
+      {/* Cancel бутон се показва само в режим на редакция */}
+      {/* {isEditing && (
+              <button onClick={handleCancel} style={{ marginRight: "10px" }}>
+                Cancel
+              </button>
+            )}
+
+            <button
+              onClick={() => {
+                if (isEditing) handleEdit();
+                setIsEditing((prev) => !prev);
+              }}
+            >
+              {isEditing ? "Save" : "Edit"}
+            </button> */}
+
+      {/* Delete Button */}
+      {/* <button
+              onClick={handleDelete}
+              style={{
+                marginLeft: "10px",
+                backgroundColor: "red",
+                color: "white",
+              }}
+            >
+              Delete
+            </button> */}
+      {/* Визуално потвърждение */}
+      {/* {savedMessage && (
+              <p style={{ color: "green", marginTop: "5px" }}>{savedMessage}</p>
+            )} */}
+      {/* </div>
+            </div>
+              );
+            }; */}
+
+      <CardActions
+        sx={{
+          display: "flex",
+          // flexWrap: "wrap",
+          justifyContent: "center",
+          gap: 0.5,
+          flexShrink: 0, // не позволява бутоните да се свиват
+        }}
+      >
         {isEditing && (
-          <button onClick={handleCancel} style={{ marginRight: "10px" }}>
+          <Button variant="outlined" onClick={handleCancel}>
             Cancel
-          </button>
+          </Button>
         )}
 
-        <button
+        <Button
+          variant="contained"
           onClick={() => {
             if (isEditing) handleEdit();
             setIsEditing((prev) => !prev);
           }}
         >
           {isEditing ? "Save" : "Edit"}
-        </button>
+        </Button>
 
-        {/* Delete Button */}
-        <button
-          onClick={handleDelete}
-          style={{ marginLeft: "10px", backgroundColor: "red", color: "white" }}
-        >
+        <Button variant="contained" color="error" onClick={handleDelete}>
           Delete
-        </button>
-        {/* Визуално потвърждение */}
-        {savedMessage && (
-          <p style={{ color: "green", marginTop: "5px" }}>{savedMessage}</p>
-        )}
-      </div>
-    </div>
+        </Button>
+      </CardActions>
+
+      {savedMessage && (
+        <Typography
+          variant="body2"
+          sx={{
+            color: savedMessage.includes("❌") ? "error.main" : "success.main",
+            m: 2,
+          }}
+        >
+          {savedMessage}
+        </Typography>
+      )}
+    </CardMUI>
   );
 };
 

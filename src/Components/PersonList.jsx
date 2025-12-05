@@ -5,6 +5,7 @@ const PersonList = ({ employees, setEmployees }) => {
   console.log(employees);
   return (
     <>
+      {/* <div className="container"> */}
       <section className={styles.employee}>
         {employees.map((employee) => (
           <PersonCard
@@ -13,19 +14,20 @@ const PersonList = ({ employees, setEmployees }) => {
             employees={employees}
             setEmployees={setEmployees}
             /* Tämä kaikki = {...employee}
-            name={employee.name}
-            title={employee.title}
-            salary={employee.salary}
-            phone={employee.phone}
-            email={employee.email}
-            animal={employee.animal}
-            startDate={employee.startDate}
-            location={employee.location}
-            department={employee.department}
-            skills={employee.skills} */
+              name={employee.name}
+              title={employee.title}
+              salary={employee.salary}
+              phone={employee.phone}
+              email={employee.email}
+              animal={employee.animal}
+              startDate={employee.startDate}
+              location={employee.location}
+              department={employee.department}
+              skills={employee.skills} */
           />
         ))}
       </section>
+      {/* </div> */}
     </>
   );
 };

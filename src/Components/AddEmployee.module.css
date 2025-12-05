@@ -52,12 +52,12 @@ button[type="submit"]:hover {
 }
 
 /* Secondary button (Reset Form) */
-button[type="reset"] {
+.resetBtn {
   background-color: #f44336;
   color: white;
 }
 
-button[type="reset"]:hover {
+.resetBtn:hover {
   background-color: #e53935;
   transform: scale(1.03);
 }

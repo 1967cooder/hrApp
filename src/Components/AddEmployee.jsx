@@ -1,6 +1,6 @@
 import axios from "axios";
-import styles from "./AddEmployee.module.css";
-
+// import styles from "./AddEmployee.module.css";
+import { Box, TextField, Button, Typography } from "@mui/material";
 import { _post } from "../hooks/useAxios";
 
 function AddEmployee({ formData, setFormData, employees, setEmployees }) {
@@ -54,113 +54,123 @@ function AddEmployee({ formData, setFormData, employees, setEmployees }) {
     });
   };
 
-  return (
-    <section className={styles.addEmployeeContainer}>
-      <form className={styles.form} onSubmit={handleSubmit}>
-        <label htmlFor="name">Name:</label>
-        <input
-          id="name"
-          name="name"
-          autoComplete="name"
-          value={formData.name}
-          onChange={handleChange}
-          required
-        />
-        <label htmlFor="title">Title:</label>
-        <input
-          id="title"
-          name="title"
-          value={formData.title}
-          onChange={handleChange}
-          required
-        />
-        <label htmlFor="salary">Salary:</label>
-        <input
-          id="salary"
-          name="salary"
-          value={formData.salary}
-          onChange={handleChange}
-          required
-        />
-        <label htmlFor="phone">Phone:</label>
-        <input
-          id="phone"
-          name="phone"
-          value={formData.phone}
-          onChange={handleChange}
-          required
-        />
-        <label htmlFor="email">Email:</label>
-        <input
-          id="email"
-          name="email"
-          value={formData.email}
-          onChange={handleChange}
-          required
-        />
-        <label htmlFor="animal">Animal:</label>
-        <input
-          id="animal"
-          name="animal"
-          value={formData.animal}
-          onChange={handleChange}
-          required
-        />
-        <label htmlFor="startDate">Start Date:</label>
-        <input
-          id="startDate"
-          name="startDate"
-          type="date"
-          value={formData.startDate}
-          onChange={handleChange}
-          required
-        />
-        <label htmlFor="location">Location:</label>
-        <input
-          id="location"
-          name="location"
-          value={formData.location}
-          onChange={handleChange}
-          required
-        />
-        <label htmlFor="department">Department:</label>
-        <input
-          id="department"
-          name="department"
-          value={formData.department}
-          onChange={handleChange}
-          required
-        />
-        <label htmlFor="skills">Skills:</label>
-        <input
-          id="skills"
-          name="skills"
-          value={formData.skills}
-          onChange={handleChange}
-        />
+  const handleReset = () => {
+    setFormData({
+      name: "",
+      title: "",
+      salary: "",
+      phone: "",
+      email: "",
+      animal: "",
+      startDate: "",
+      location: "",
+      department: "",
+      skills: "",
+    });
+  };
 
-        <button type="submit">Add Employee</button>
-        <button
-          type="reset"
-          onClick={() => {
-            setFormData({
-              name: "",
-              title: "",
-              salary: "",
-              phone: "",
-              email: "",
-              animal: "",
-              startDate: "",
-              location: "",
-              department: "",
-              skills: "",
-            });
-          }}
-        >
+  return (
+    <Box
+      component="form"
+      onSubmit={handleSubmit}
+      sx={{
+        maxWidth: 600,
+        mx: "auto",
+        mt: 4,
+        p: 4,
+        display: "flex",
+        flexDirection: "column",
+        gap: 2,
+        backgroundColor: "background.paper",
+        borderRadius: 2,
+        boxShadow: 3,
+      }}
+    >
+      <Typography variant="h5" component="h2" sx={{ mb: 2 }}>
+        Add New Employee
+      </Typography>
+
+      <TextField
+        label="Name"
+        name="name"
+        value={formData.name}
+        onChange={handleChange}
+        required
+      />
+      <TextField
+        label="Title"
+        name="title"
+        value={formData.title}
+        onChange={handleChange}
+        required
+      />
+      <TextField
+        label="Salary"
+        name="salary"
+        value={formData.salary}
+        onChange={handleChange}
+        required
+      />
+      <TextField
+        label="Phone"
+        name="phone"
+        value={formData.phone}
+        onChange={handleChange}
+        required
+      />
+      <TextField
+        label="Email"
+        name="email"
+        value={formData.email}
+        onChange={handleChange}
+        required
+      />
+      <TextField
+        label="Animal"
+        name="animal"
+        value={formData.animal}
+        onChange={handleChange}
+        required
+      />
+      <TextField
+        label="Start Date"
+        name="startDate"
+        type="date"
+        value={formData.startDate}
+        onChange={handleChange}
+        InputLabelProps={{ shrink: true }}
+        required
+      />
+      <TextField
+        label="Location"
+        name="location"
+        value={formData.location}
+        onChange={handleChange}
+        required
+      />
+      <TextField
+        label="Department"
+        name="department"
+        value={formData.department}
+        onChange={handleChange}
+        required
+      />
+      <TextField
+        label="Skills (comma separated)"
+        name="skills"
+        value={formData.skills}
+        onChange={handleChange}
+      />
+
+      <Box sx={{ display: "flex", gap: 2, justifyContent: "flex-end", mt: 2 }}>
+        <Button variant="outlined" color="error" onClick={handleReset}>
           Reset Form
-        </button>
-      </form>
-    </section>
+        </Button>
+        <Button variant="contained" color="primary" type="submit">
+          Add Employee
+        </Button>
+      </Box>
+    </Box>
   );
 }
 

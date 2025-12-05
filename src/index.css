@@ -1,4 +1,5 @@
 /* GLOBAL RESET */
+
 * {
   margin: 0;
   padding: 0;
@@ -11,10 +12,13 @@
   min-height: 100vh;
   width: 100vw;
 }
-
+html {
+  font-size: 62.5%; /* 1rem = 10px todella terkeä, aina pitää olla määritälty, että olisi helppo kirjoittaa fontien koot*/
+}
 /* Global font */
 body {
-  font-family: "Red Hat Display", sans-serif;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.6rem; /* perus fonttikoko 16px */
 }
 
 .container {
@@ -25,6 +29,7 @@ body {
   flex-wrap: wrap; /* ако не се побират, да минат на следващ ред */
   /* height: 79vh; */
   min-height: calc(100vh - 120px); /* адаптивна минимална височина */
+  overflow-y: auto;
   width: 100%;
   margin-top: 0.6rem; /* ето реално разстояние под header */
   gap: 40px; /* разстояние между картите */
@@ -34,6 +39,10 @@ body {
   padding-bottom: 2rem; /* малко място под последния елемент */
   padding-top: 2rem; /* малко място над първия елемент */
   overflow-y: auto; /* позволява скрол, ако екрана е малък */
+}
+section,
+h1 {
+  display: block;
 }
 /*
 body {

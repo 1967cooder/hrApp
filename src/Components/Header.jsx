@@ -82,6 +82,18 @@ const Header = () => {
           >
             Add Employee
           </Button>
+          <Button
+            color="inherit"
+            component={Link}
+            to="/employees-table"
+            sx={{
+              backgroundColor: "white",
+              color: "hsl(235, 36%, 46%)",
+              fontSize: "2rem",
+            }}
+          >
+            Employees Table
+          </Button>
         </Box>
       </Toolbar>
     </AppBar>

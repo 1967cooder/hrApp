@@ -40,7 +40,8 @@ const EmployeesTable = () => {
   if (!employees || employees.length === 0) return <div>No data found</div>;
 
   return (
-    <div className="container" style={{ marginTop: "2rem" }}>
+    <div>
+      <div>Table is here</div>
       <TableContainer component={Paper}>
         <Table>
           <TableHead>

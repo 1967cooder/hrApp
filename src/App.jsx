@@ -12,6 +12,7 @@ import AddEmployee from "./Components/AddEmployee.jsx";
 import employeeData from "./db.json";
 
 import { _get } from "./hooks/useAxios";
+import EmployeesTable from "./Components/EmployeesTable.jsx";
 
 function App() {
   const [employees, setEmployees] = useState([]); // Списък със служители
@@ -127,7 +128,7 @@ function App() {
                 />
               }
             />
-            {/* <Route path="/employees-table" element={<EmployeesTable />} /> */}
+            <Route path="/employees-table" element={<EmployeesTable />} />
           </Routes>
         </div>
         <Footer />

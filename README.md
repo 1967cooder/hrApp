@@ -5,6 +5,7 @@
 - GitHub Pages: [https://1967cooder.github.io/hrApp/#/](https://1967cooder.github.io/hrApp/#/)
 - Local (Vite): [http://localhost:5173/hrApp/#/](http://localhost:5173/hrApp/#/)
 - Mock API Live (Render): [https://hr-mock-api.onrender.com/]
+- GitHub Pages: [https://github.com/1967cooder/hrApp/tree/Step7]
 
 ---
 
@@ -109,6 +110,8 @@ Below are screenshots showcasing the main parts of the application:
 ### 👤 Employee Details
 
 ![Employees Table](public/images/employees-table.png)
+
+### Mobile
 
 ![Mobile_hrApp](public/images/mobile-hrApp.png)
 

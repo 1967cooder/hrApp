@@ -110,6 +110,8 @@ Below are screenshots showcasing the main parts of the application:
 
 ![Employees Table](public/images/employees-table.png)
 
+![Mobile_hrApp](public/images/mobile-hrApp.png)
+
 ## 🎯 Project Goal
 
 The goal of this project is to practice:

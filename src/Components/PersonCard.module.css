@@ -2,62 +2,55 @@
   background-color: white;
   color: black;
   font-size: 0.5em;
-  width: calc(15% - 16px); /* 5 на ред (коригира gap) */
-  width: 200px; /* фиксирана ширина */
-  height: 350px; /* фиксирана височина */
+
+  /* ❌ МАХАМЕ ширините */
+  /* width: 200px; */
+  /* width: calc(15% - 16px); */
+
+  height: 350px;
+
   display: flex;
-  flex-direction: column; /* подрежда елементите вертикално */
-  flex-wrap: nowrap;
-  justify-content: flex-start; /* центрира вертикално box */
+  flex-direction: column;
+  justify-content: flex-start;
+
   border-radius: 10px;
   box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.2);
+
   padding: 15px;
   padding-top: 30px;
-  /*gap: 10px; paztojanie mejdu redovete*/
-  box-sizing: border-box; /* da ne izlizat ot ekrana */
-  /* overflow-y: auto; ⚡ ключовото! вътрешен скрол вместо разтягане;
-  moje da se polzva ako se mahne ot perso-card button  "margintop:auto"*/
+
+  box-sizing: border-box;
 }
 
 .person-card > * {
-  /*vsichki deza v box*/
-  margin-bottom: 8px; /*razstojanie mejdu redovete kato gap*/
+  margin-bottom: 8px;
 }
 
-.person-card button {
-  background-color: hsl(235, 36%, 46%);
-  color: white;
-  border: none;
-  padding: 4px 12px; /* Comfortable size */
-  border-radius: 6px;
-  font-size: 12px;
-  cursor: pointer; /* Pointer on hover */
-  margin-top: auto; /* Бутоните винаги падат долу */
-  display: flex;
-  gap: 8px;
-  transition: background 0.25s ease, transform 0.15s ease;
-}
-
-.person-card button:hover {
-  background-color: hsl(235, 36%, 46%);
-  transform: translateY(-2px); /* Small lift effect */
-}
-
-.person-card button:active {
-  background-color: #2d6aa1; /* Even darker when pressed */
-  transform: translateY(0); /* Remove lift */
-}
 .person-card-buttons {
   display: flex;
-  gap: 4px; /* разстояние между бутоните */
-  margin-top: auto; /* винаги долу */
+  gap: 4px;
+  margin-top: auto;
   flex-wrap: wrap;
   justify-content: center;
 }
-person-card-buttons button {
-  margin-top: 0; /* премахваме margin-top:auto */
-  flex: 1 1 auto; /* бутоните да се скалират леко при нужда */
-  min-width: 60px; /* минимум ширина за всеки бутон */
-  font-size: 12px;
+
+.person-card-buttons button {
+  background-color: hsl(235, 36%, 46%);
+  color: white;
+  border: none;
   padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 12px;
+  cursor: pointer;
+
+  min-width: 60px;
+  transition: background 0.25s ease, transform 0.15s ease;
+}
+
+.person-card-buttons button:hover {
+  transform: translateY(-2px);
+}
+
+.person-card-buttons button:active {
+  transform: translateY(0);
 }

@@ -127,4 +127,10 @@ The goal of this project is to practice:
 
 ---
 
+## Contacts
+
+LinkedIn: https://www.linkedin.com/in/silvanalindholm
+
+Email: silvanalindholm@hotmail.com
+
 ✅ This project is intended for educational and demonstration purposes.

@@ -1,14 +1,21 @@
 .employee {
-  /* контейнер за картите */
   display: grid;
-  grid-template-columns: repeat(6, 1fr); /* 6 колони */
-  grid-template-rows: repeat(2, auto); /* 2 реда */
-  row-gap: 20px; /* разстояние между редовете */
-  column-gap: 5px; /* по-малко разстояние между колоните */
-  justify-items: center; /* центрира картите хоризонтално в колоната */
-  align-items: start; /* подравнява картите отгоре */
+
+  /* 🔑 Responsive grid */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+
+  gap: 20px; /* реално разстояние между картите */
+
   padding: 2rem;
-  background-color: hsl(235, 36%, 46%);
   width: 100%;
   box-sizing: border-box;
+
+  background-color: hsl(235, 36%, 46%);
+}
+
+/* Desktop – максимум 6 карти на ред */
+@media (min-width: 1400px) {
+  .employee {
+    grid-template-columns: repeat(6, 1fr);
+  }
 }

@@ -1,5 +1,4 @@
 /* GLOBAL RESET */
-
 * {
   margin: 0;
   padding: 0;
@@ -10,67 +9,62 @@
 #root {
   background-color: aqua;
   min-height: 100vh;
-  width: 100vw;
+  width: 100%;
+  overflow-x: hidden; /* 🔑 важно – спира рязането отдясно */
 }
+
 html {
-  font-size: 62.5%; /* 1rem = 10px todella terkeä, aina pitää olla määritälty, että olisi helppo kirjoittaa fontien koot*/
+  font-size: 62.5%; /* 1rem = 10px */
 }
+
 /* Global font */
 body {
   font-family: "Roboto", sans-serif;
-  font-size: 1.6rem; /* perus fonttikoko 16px */
+  font-size: 1.6rem;
 }
 
+/* Container – отделен от Header, фонът на #root се вижда */
 .container {
   display: flex;
-  flex-direction: row; /* подрежда елементите хоризонтално */
-  justify-content: center;
+  flex-direction: column; /* mobile first */
   align-items: center;
-  flex-wrap: wrap; /* ако не се побират, да минат на следващ ред */
-  /* height: 79vh; */
-  min-height: calc(100vh - 120px); /* адаптивна минимална височина */
-  overflow-y: auto;
+  justify-content: flex-start;
+
   width: 100%;
-  margin-top: 0.6rem; /* ето реално разстояние под header */
-  gap: 40px; /* разстояние между картите */
+  min-height: calc(100vh - 120px);
+
+  gap: 2rem;
+  margin-top: 0.6rem; /* 🔑 това прави пространство между Header и Container */
+  padding: 2rem 1rem;
+
   background-color: hsl(235, 36%, 46%);
   color: white;
-  box-sizing: border-box; /* da ne izlizat ot ekrana */
-  padding-bottom: 2rem; /* малко място под последния елемент */
-  padding-top: 2rem; /* малко място над първия елемент */
-  overflow-y: auto; /* позволява скрол, ако екрана е малък */
+
+  overflow-y: auto;
 }
+
+/* Tablet */
+@media (min-width: 768px) {
+  .container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 3rem;
+    margin-top: 0.6rem; /* още малко пространство за таблети */
+    padding: 2rem;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1200px) {
+  .container {
+    gap: 4rem;
+    margin-top: 0.6rem; /* за десктоп повече пространство */
+    padding: 3rem;
+  }
+}
+
 section,
 h1 {
   display: block;
 }
-/*
-body {
-  min-width: 320px;
-  min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  color: var(--highlight-color);
-  padding: 1rem;
-}
-
-a {
-  font-weight: 500;
-  color: var(--primary-color);
-  text-decoration: inherit;
-}
-
-a:hover {
-  color: var(--secondary-color);
-}
-
-main {
-  min-height: calc(100vh - 225px);
-  max-width: 1200px;
-  display: flex;
-  justify-content: center;
-  margin: auto;
-}
-*/

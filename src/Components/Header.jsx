@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-//import styles from "./Header.module.css";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import AppBar from "@mui/material/AppBar";
@@ -8,42 +7,43 @@ import Box from "@mui/material/Box";
 
 const Header = () => {
   return (
-    // <header className={styles.headerContainer}>
-    //   <h1>hrApp</h1>
-    //   <nav className={styles.navLinks}>
-    //     <Link to="/">Person List</Link>
-    //     <Link to="/about">About</Link>
-    //     <Link to="/add-employee">Add Employee</Link>
-    //   </nav>
-    // </header>
     <AppBar
       position="static"
       sx={{
         backgroundColor: "hsl(235, 36%, 46%)",
         color: "white",
-        padding: "2rem",
+        padding: { xs: "1rem", sm: "2rem" }, // Mobile-first padding
       }}
     >
       <Toolbar
         sx={{
           display: "flex",
+          flexDirection: { xs: "column", sm: "row" }, // Column for mobile, row for tablet+
+          alignItems: { xs: "flex-start", sm: "center" },
           justifyContent: "space-between",
-          alignItems: "center",
           width: "100%",
+          gap: { xs: 2, sm: 0 }, // Spacing for mobile
         }}
       >
         <Typography
           variant="h6"
           component="header"
-          sx={{ flexGrow: 1, fontSize: "4rem" }}
+          sx={{
+            flexGrow: 1,
+            fontSize: { xs: "2.5rem", sm: "4rem" },
+            mb: { xs: 2, sm: 0 },
+          }}
         >
           hrApp
         </Typography>
+
         <Box
           sx={{
             display: "flex",
-            gap: 2,
-            alignItems: "right",
+            flexDirection: { xs: "column", sm: "row" }, // Vertical links on mobile
+            gap: { xs: 1, sm: 2 }, // Gap between buttons
+            width: { xs: "100%", sm: "auto" }, // Buttons full-width on mobile
+            alignItems: { xs: "stretch", sm: "center" }, // Stretch full-width on mobile
           }}
         >
           <Button
@@ -53,7 +53,8 @@ const Header = () => {
             sx={{
               backgroundColor: "white",
               color: "hsl(235, 36%, 46%)",
-              fontSize: "2rem",
+              fontSize: { xs: "1.6rem", sm: "2rem" },
+              width: { xs: "100%", sm: "auto" },
             }}
           >
             Person List
@@ -65,7 +66,8 @@ const Header = () => {
             sx={{
               backgroundColor: "white",
               color: "hsl(235, 36%, 46%)",
-              fontSize: "2rem",
+              fontSize: { xs: "1.6rem", sm: "2rem" },
+              width: { xs: "100%", sm: "auto" },
             }}
           >
             About
@@ -77,7 +79,8 @@ const Header = () => {
             sx={{
               backgroundColor: "white",
               color: "hsl(235, 36%, 46%)",
-              fontSize: "2rem",
+              fontSize: { xs: "1.6rem", sm: "2rem" },
+              width: { xs: "100%", sm: "auto" },
             }}
           >
             Add Employee
@@ -89,7 +92,8 @@ const Header = () => {
             sx={{
               backgroundColor: "white",
               color: "hsl(235, 36%, 46%)",
-              fontSize: "2rem",
+              fontSize: { xs: "1.6rem", sm: "2rem" },
+              width: { xs: "100%", sm: "auto" },
             }}
           >
             Employees Table

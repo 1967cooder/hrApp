@@ -4,23 +4,69 @@
   font-size: 2em;
   width: 100%;
   background-color: hsl(235, 36%, 46%);
-  padding: 2rem 2rem;
+  padding: 1.5rem 1rem;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column; /* Mobile-first: вертикално */
+  align-items: flex-start;
   box-sizing: border-box;
 }
+
 .navLinks {
   display: flex;
-  gap: 50px;
+  flex-direction: column; /* линковете подредени вертикално за малки екрани */
+  gap: 10px;
+  margin-top: 1rem;
+  width: 100%;
 }
 
 .navLinks a {
   color: white;
   text-decoration: none;
-  font-size: 1em;
+  font-size: 1.2em;
 }
 
 .navLinks a:hover {
   text-decoration: underline;
+}
+
+/* Phones: 400px+ (малки телефони) */
+@media (min-width: 400px) {
+  .headerContainer {
+    padding: 1.5rem 2rem;
+  }
+
+  .navLinks a {
+    font-size: 1.3em;
+  }
+}
+
+/* Tablets: 601px+ */
+@media (min-width: 601px) {
+  .headerContainer {
+    flex-direction: row; /* логото и навигацията хоризонтално */
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .navLinks {
+    flex-direction: row; /* линковете хоризонтално */
+    gap: 50px;
+    margin-top: 0;
+    width: auto;
+  }
+
+  .navLinks a {
+    font-size: 1em;
+  }
+}
+
+/* Desktop: 1024px+ */
+@media (min-width: 1024px) {
+  .headerContainer {
+    padding: 2rem 3rem;
+  }
+
+  .navLinks {
+    gap: 60px;
+  }
 }
